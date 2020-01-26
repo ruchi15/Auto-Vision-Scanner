@@ -1,5 +1,6 @@
 from google.cloud import vision
 from google.cloud.vision import types
+import os
 
 client = vision.ImageAnnotatorClient()
 
@@ -9,7 +10,12 @@ class Detect_Image:
 
 	def detect_image(imagePath):
 
+
+		if os.path.exists("images/.DS_Store"):
+			os.remove("images/.DS_Store")
+
 		image_to_open = imagePath
+
 
 		with open(image_to_open, 'rb') as image_file:
 			content = image_file.read()
@@ -20,39 +26,53 @@ class Detect_Image:
 
 		texts = [text.description for text in text_response.text_annotations]
 
-		texts_to_show = texts[0]
+		print(texts)
 
-		#show web response of the detected image
+		if len(texts) != 0:
+			texts_to_show = texts[0]
 
-		web_response = client.web_detection(image=image)
+			output = texts_to_show
 
-		#web_response = client.web_detection(image=image)
+			#show web response of the detected image
 
-		web_content = web_response.web_detection
-		web_content.best_guess_labels
+			web_response = client.web_detection(image=image)
 
-		predictions = [(entity.description, '{:.2%}'.format(entity.score)) for entity in web_content.web_entities]
+			#web_response = client.web_detection(image=image)
 
-		web_content.full_matching_images
+			web_content = web_response.web_detection
+			web_content.best_guess_labels
 
-		web_content.visually_similar_images[:3]
+			predictions = [(entity.description, '{:.2%}'.format(entity.score)) for entity in web_content.web_entities]
 
-		# to detect facial emotion recognition
+			web_content.full_matching_images
 
-		# image_to_open = 'images/face.jpg'
+			web_content.visually_similar_images[:3]
 
-		# with open(image_to_open, 'rb') as image_file:
-		# 	content = image_file.read()
-		# image = vision.types.Image(content=content)
+		else:
+			#to detect facial emotion recognition
 
-		# face_response = client.face_detection(image=image)
-		# face_content = face_response.face_annotations
+			# image_to_open = imagePath
 
-		# face_content[0].detection_confidence
+			print(image_to_open)
 
-		# face_content_result = face_content[0]
+			with open(image_to_open, 'rb') as image_file:
+				content = image_file.read()
+			image = vision.types.Image(content=content)
 
-		return texts_to_show
+			face_response = client.face_detection(image=image)
+			face_content = face_response.face_annotations
+			print("face", face_content)
+
+			conf = face_content[0].detection_confidence
+			
+
+			face_content_result = face_content[0]
+
+
+
+			output = str(face_content_result)
+
+		return output
 
 		
 

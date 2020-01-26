@@ -1,7 +1,7 @@
 from flask import Flask
 import os
 
-UPLOAD_FOLDER = '/Users/ruchisingh/tamuhack_challenge/images/'
+UPLOAD_FOLDER = 'images/'
 
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
