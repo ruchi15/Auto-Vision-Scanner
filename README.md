@@ -2,9 +2,6 @@
 
 README: 
 
-Ever worried about losing your important documents? Or forgot about the place you had visited after looking at your memories? 
-Worry not! We have a scanner that can solve all those problems of yours. 
-
 ## Idea/Mission:
 Built an Auto Vision Scanner using the powerful Google Cloud Vision API that scans the image, analyses and converts the image into text. It locates any textual content in the image and extracts it. 
 You’ll be amazed by the extent to which the powerful Google Cloud Vision API visualises and extracts the text from the image.
