@@ -38,11 +38,11 @@ The folder named "images" will contain the images which you will upload/import.
 HACKERS - Ruchi Singh, Shivam Gupta, Harshita Rastogi
 
 ## Tech Stack:
-Google Cloud Vision API
-Python
-Flask
-HTML
-JavaScript
-JSON
+Google Cloud Vision API,
+Python,
+Flask,
+HTML,
+JavaScript,
+JSON.
  
 
