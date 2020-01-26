@@ -14,8 +14,12 @@
                 - 'image' : The type of the image which will portray the content
                 - 'text_response' : The text contained in the image with other features like location of the text
                 - 'predictions' : prediction for the image type
-                - 'Class_num' : 
-                
+                - 'face_response' : Respone of the face(features of the face) after detecting face
+                - 'face_content': Face Annotations
+                - 'conf': The confidence of the prediction of the emotions
+                - 'face_content_result': The likelihoof of all the emotions
+## How we build:
+We used the Google Clould Vision API,  Flask ,Python,  HTML to host it on the web page page.
 
 ## Running the Codes
 
