@@ -1,6 +1,6 @@
 # Auto-Vision-Scanner
 
-README: 
+README: https://devpost.com/software/auto-vision-scanner
 
 ## Idea/Mission:
 Built an Auto Vision Scanner using the powerful Google Cloud Vision API that scans the image, analyses and converts the image into text. It locates any textual content in the image and extracts it. 
