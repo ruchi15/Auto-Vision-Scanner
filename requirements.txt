@@ -9,6 +9,8 @@ google-auth-httplib2==0.0.3
 google-cloud==0.34.0
 google-cloud-vision==0.41.0
 googleapis-common-protos==1.51.0
+grpcio>=1.10.0
+grpcio-tools>=1.10.0
 html5lib==1.0.1
 httplib2==0.17.0
 imageio==2.5.0
